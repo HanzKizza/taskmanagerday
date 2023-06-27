@@ -1,4 +1,5 @@
 import Greetings from './Components/Greetings'
+import Tasks from './Components/Tasks';
 function App() {
   const tasks = [
     {
@@ -22,9 +23,7 @@ function App() {
   ]
   return (
     <div>
-      {
-        tasks.map((task) => (<h1>{task.text}</h1>))
-      }
+      <Tasks tasks={tasks} />
     </div>
   );
 }
