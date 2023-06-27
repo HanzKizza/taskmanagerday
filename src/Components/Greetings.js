@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Greetings(props) {
+function Greetings({name, wishes}) {
   return (
     <div>
-      <h3>Hello {props.name}. How are you {props.wishes}</h3>
+      <h3>Hello {name}. How are you {wishes}</h3>
     </div>
   )
 }
