@@ -1,4 +1,5 @@
 import Greetings from './Components/Greetings'
+import Header from './Components/Header';
 import Tasks from './Components/Tasks';
 function App() {
   const tasks = [
@@ -22,7 +23,8 @@ function App() {
     }
   ]
   return (
-    <div>
+    <div className='container'>
+      <Header title="Task Manager"/>
       <Tasks tasks={tasks} />
     </div>
   );
