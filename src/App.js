@@ -23,10 +23,20 @@ function App() {
       },
   ])
 
-  const  test = () => {
-    console.log("Button clicked")
-   }
+     //add task
+  const addTask = (task) => {
+    const id = tasks.length + 1;
+    const newTask = {id, ...task}
+    setTasks([...tasks, newTask])
+    console.log(id)
+  }
 
+  //Delete Task
+   const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id))
+   }
+  
+   //Toggle reminder
    const  toggleReminder = (id) => {
     setTasks(tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task))
    }
@@ -34,7 +44,8 @@ function App() {
   return (
     <div className='container'>
       <Header title="Task Manager"/>
-      <Tasks tasks={tasks} toggleReminder={toggleReminder}/>
+      <Tasks tasks={tasks} toggleReminder={toggleReminder} deleteTask={deleteTask}/>
+      
     </div>
   );
 }
